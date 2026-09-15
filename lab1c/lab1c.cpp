@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <ctime>
+#include <cstdlib>
 
 using namespace std;
 
@@ -13,7 +14,7 @@ using namespace std;
  * @param n длина строки.
  * @return возвращает случайную строку длины n.
  */
-string generateString(int n)
+string generateString(int const n)
 {
     string s = "";
 
@@ -32,7 +33,7 @@ string generateString(int n)
  * @param count массив для хранения количества букв.
  * @param n длина строки.
  */
-void countLetters(string s, int count[], int n)
+void countLetters(string s, int count[], int const n)
 {
     for (int i = 0; i < 26; i++) {
         count[i] = 0;
@@ -94,7 +95,7 @@ int main()
 
     cout << "String: " << generated_string << '\n';
 
-    int letter_count[26];
+    int letter_count[26] = {};
 
     countLetters(generated_string, letter_count, N);
 
