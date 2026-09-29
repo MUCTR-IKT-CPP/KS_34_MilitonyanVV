@@ -1,5 +1,5 @@
 ﻿// lab2c.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+// 
 
 #include <iostream>
 #include <cstdlib>
@@ -98,6 +98,7 @@ void calculateStatistics(double* p_income, int month_count) {
  *
  * @param p_income указатель на массив доходов
  * @param month_count количество месяцев
+ * первый цикл количество проходов по массиву
  */
 
 void sortArray(double* p_income, int month_count) {
