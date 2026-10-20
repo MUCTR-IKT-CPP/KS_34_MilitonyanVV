@@ -15,7 +15,7 @@ struct MotionSensor {
     bool motion_detected = false;
 };
 
-enum class SensorType {
+enum class SensorType {//метки типов
     TEMPERATURE,
     PRESSURE,
     MOTION
@@ -44,7 +44,7 @@ public:
         if (this == &other) {
             return *this;
         }
-
+        
         void* p_new_data = other._copyData();
         _releaseData();
         _p_sensor_data = p_new_data;
@@ -194,6 +194,9 @@ public:
             }
             break;
         }
+        default:
+            std::cout << "Unknown sensor type.\n";
+            break;
         }
     }
 
