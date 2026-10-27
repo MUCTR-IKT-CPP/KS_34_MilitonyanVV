@@ -536,7 +536,7 @@ private:
         for (int p = start; p < start + length; p++) {
             if (_slots[day][p] != -1) return false;
         }
-        // Проверяем перерывы и при добавлении простого курса
+     
         place(day, start, length, id);
         const bool valid = hasHardBreaks(plan, day);
         place(day, start, length, -1);
@@ -549,8 +549,8 @@ private:
      * @return true, если между разными сложными занятиями есть свободная пара; иначе false.
      */
     bool hasHardBreaks(const StudyPlan& plan, int day) const {
-        bool hadHard = false; //уже встретили сложное занятие?
-        bool hadBreak = false;//после него была свободная пара
+        bool hadHard = false; 
+        bool hadBreak = false;
         for (int p = 0; p < PAIRS; p++) {
             const int id = _slots[day][p];
             if (id == -1) { hadBreak = true; continue; }
@@ -907,7 +907,7 @@ void printTeacherRating(const StudyPlan& plan, const StudentGroup groups[]) {
 }
 
 /**
- * @brief Моделирует 16 недель обучения, экзамены и итоговую статистику.
+ * @brief Моделирует 16 недель обучения, экзамены и итоговую статистику(подготовка и посещаемость).
  * @param plan Учебный план; счётчики проведённых часов сбрасываются и обновляются.
  * @param schedule Недельное расписание.
  */
