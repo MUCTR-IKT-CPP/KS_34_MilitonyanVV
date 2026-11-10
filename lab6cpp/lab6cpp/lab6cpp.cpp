@@ -137,7 +137,7 @@ public:
 
     /**
      * @brief Убирает животное из зоопарка, сохраняя сам объект.
-     * @param id Идентификатор животного.
+     * @param id Идентификатор животного.Animal* pointer = &bird;
      * @return true при удалении, false, если ID не найден.
      */
     bool removeAnimal(int id) {
@@ -172,8 +172,11 @@ public:
             std::cout << "Zoo is empty.\n";
             return;
         }
-
         for (Animal* animal : _animals) {
+            if (animal == nullptr) {
+                continue;
+            }
+
             std::cout << "\nAnimal ID: " << animal->getId() << '\n';
 
             animal->eat();
@@ -184,6 +187,7 @@ public:
             if (movable != nullptr) {
                 movable->move();
             }
+
             animal->sleep();
         }
     }
